@@ -1,34 +1,37 @@
 
+
 import Vue from 'vue';
-import iView from 'iview';
-import VueRouter from 'vue-router';
-import Routers from './router';
-import Util from './libs/util';
-import App from './app.vue';
-import 'iview/dist/styles/iview.css';
+
+
+/********************引入HTML模块***********************/
+import index_html from './template/index.html';
+
+/********************引入CSS模块***********************/
+import './my-theme/index.less';
+
+/********************引入js模块*************************/
 import $ from './jquery.min.js';
 import GLOBAL from './template/GLOBAL_and_extend.js';
+import index from './views/index.vue';
+import index_0 from './views/index_0.vue';
+
+/******************** 路由 ***********************/
+import VueRouter from 'vue-router';
+Vue.use(VueRouter);
+/******************** iview框架 ***********************/
+/*import iView from 'iview';
+import 'iview/dist/styles/iview.css';
+Vue.use(iView);*/
 
 /******************** element框架 ***********************/
 import 'element-ui/lib/theme-chalk/index.css'
 import app from './views/index_1.vue'
-import { Button,Select,Option } from 'element-ui';
-Vue.prototype.$ELEMENT = { size: 'small' };
-Vue.use(Button);
-Vue.use(Select);
-Vue.use(Option);
+import ElementUI  from 'element-ui';
+Vue.use(ElementUI, { size: 'small' });
 
-/********************引入js模块*************************/
-import VueRouters from './router.js';
-import index from './views/index.vue';
-import index_0 from './views/index_0.vue';
-/********************引入HTML模块***********************/
-import index_html from './template/index.html';
-/********************引入CSS模块***********************/
-import './my-theme/index.less';
-/********************use插件***********************/
-Vue.use(VueRouter);
-Vue.use(iView);
+
+
+
 
 
 new Vue({
@@ -283,7 +286,7 @@ GLOBAL.A.hide.Public.prototype={
     //全局的组件
     compnents:function () {
         //select
-        Vue.component('public-show',index);
+
         //shows
         return this;
 
