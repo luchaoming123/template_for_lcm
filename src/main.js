@@ -13,14 +13,25 @@ import GLOBAL from './template/GLOBAL_and_extend.js';
 /********************引入js模块*************************/
 import VueRouters from './router.js';
 import index from './views/index.vue';
+import index_0 from './views/index_0.vue';
 /********************引入HTML模块***********************/
 import index_html from './template/index.html';
 /********************引入CSS模块***********************/
 import './my-theme/index.less';
 /********************use插件***********************/
+import ElementUI from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css'
+import app from './views/index_1.vue'
+
+Vue.use(ElementUI, { size: 'small' });
+
+
 Vue.use(VueRouter);
 Vue.use(iView);
-
+new Vue({
+    el: '#app',
+    render: h => h(app)
+})
 // 路由配置
 /*const router = new VueRouter({
     mode: 'history',
@@ -303,7 +314,7 @@ GLOBAL.A.hide.Animal.prototype.vue_start=function () {
     new Vue({
         el:'#test_obj',
         data:{
-            mesaage:'哈哈哈哈哈或或或或或或或或或'
+            message:'哈哈哈哈哈或或或或或或或或或'
         },
         methods:{
 
