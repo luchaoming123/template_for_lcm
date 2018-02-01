@@ -13,7 +13,7 @@
                 v-model="value11"
                 multiple
                 collapse-tags
-                style="margin-left: 20px;"
+                style="margin-left: 20px;width: 500px"
                 placeholder="请选择">
             <el-option
                     v-for="item in options"

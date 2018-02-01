@@ -9,6 +9,14 @@ import 'iview/dist/styles/iview.css';
 import $ from './jquery.min.js';
 import GLOBAL from './template/GLOBAL_and_extend.js';
 
+/******************** element框架 ***********************/
+import 'element-ui/lib/theme-chalk/index.css'
+import app from './views/index_1.vue'
+import { Button,Select,Option } from 'element-ui';
+Vue.prototype.$ELEMENT = { size: 'small' };
+Vue.use(Button);
+Vue.use(Select);
+Vue.use(Option);
 
 /********************引入js模块*************************/
 import VueRouters from './router.js';
@@ -19,19 +27,14 @@ import index_html from './template/index.html';
 /********************引入CSS模块***********************/
 import './my-theme/index.less';
 /********************use插件***********************/
-import ElementUI from 'element-ui'
-import 'element-ui/lib/theme-chalk/index.css'
-import app from './views/index_1.vue'
-
-Vue.use(ElementUI, { size: 'small' });
-
-
 Vue.use(VueRouter);
 Vue.use(iView);
+
+
 new Vue({
     el: '#app',
     render: h => h(app)
-})
+});
 // 路由配置
 /*const router = new VueRouter({
     mode: 'history',
