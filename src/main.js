@@ -7,8 +7,9 @@ import Vue from 'vue';
 import index_html from './template/index.html';
 
 /********************引入CSS模块***********************/
+import './styles/reset.less';
 import './my-theme/index.less';
-
+/*import 'less';*/
 /********************引入js模块*************************/
 import $ from './jquery.min.js';
 import GLOBAL from './template/GLOBAL_and_extend.js';
@@ -19,9 +20,9 @@ import index_0 from './views/index_0.vue';
 import VueRouter from 'vue-router';
 Vue.use(VueRouter);
 /******************** iview框架 ***********************/
-/*import iView from 'iview';
+import iView from 'iview';
 import 'iview/dist/styles/iview.css';
-Vue.use(iView);*/
+Vue.use(iView);
 
 /******************** element框架 ***********************/
 import 'element-ui/lib/theme-chalk/index.css'
@@ -286,7 +287,7 @@ GLOBAL.A.hide.Public.prototype={
     //全局的组件
     compnents:function () {
         //select
-
+        /*Vue.component('chil',index_0);*/
         //shows
         return this;
 
