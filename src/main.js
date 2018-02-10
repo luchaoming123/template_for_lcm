@@ -12,7 +12,7 @@ import './my-theme/index.less';
 /*import 'less';*/
 /********************引入js模块*************************/
 import $ from './jquery.min.js';
-import GLOBAL from './template/GLOBAL_and_extend.js';
+import GLOBAL from './add_new_files/template/GLOBAL_and_extend.js';
 import index from './views/index.vue';
 import index_0 from './views/index_0.vue';
 
@@ -30,7 +30,12 @@ import app from './views/index_1.vue'
 import ElementUI  from 'element-ui';
 Vue.use(ElementUI, { size: 'small' });
 
+// Import F7
+import Framework7 from 'framework7'
 
+// Import F7 Vue Plugin
+import Framework7Vue from 'framework7-vue'
+Vue.use(Framework7Vue, Framework7);
 
 
 
@@ -287,7 +292,8 @@ GLOBAL.A.hide.Public.prototype={
     //全局的组件
     compnents:function () {
         //select
-        /*Vue.component('chil',index_0);*/
+        Vue.component('chil',index_0);
+        Vue.component('chils',index);
         //shows
         return this;
 
@@ -298,7 +304,14 @@ GLOBAL.A.hide.pub=new GLOBAL.A.hide.Public();
 //执行函数
 GLOBAL.A.hide.pub.compnents().myMixin();
 
-
+// Init App
+new Vue({
+    el: '#app_open',
+    framework7: {
+        root: '#app'
+    },
+    // ...
+});
 /*******************************************
 *  1.用途: 公共类，大家共同使用的
 *  2.属性: show us
